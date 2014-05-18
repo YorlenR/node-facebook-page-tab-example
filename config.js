@@ -16,8 +16,7 @@ var Config = function(){
         id: '664975803575764', // facebook application ID
         secret: 'b43412d7b4d39dd135f643088778952a', // facebook application secret
         callback: 'https://mcnallydevelopers.com/apps/facebook/1475477369355601/', // facebook callback url
-        scope: ['email'], // https://developers.facebook.com/docs/facebook-login/permissions/v2.0
-        page: 'mcnallydev' // facebook page name
+        scope: ['email'] // https://developers.facebook.com/docs/facebook-login/permissions/v2.0
     };
 
     /**
