@@ -17,7 +17,8 @@ app.use( session( config.session ) );
 app.use( facebookPageTap( app, config.facebook ) );
 
 app.get( '/', function( req, res ){
-	res.send( JSON.stringify( req.session, null, 2 ) );
+	res.send( req );
+	//res.send( JSON.stringify( req.session, null, 2 ) );
 } );
 
 app.listen(config.port);
