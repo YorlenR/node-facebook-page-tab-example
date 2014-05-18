@@ -31,7 +31,7 @@ var Config = function(){
             secure: true,
             maxAge  : new Date(Date.now() + 3600000*24) // 24 hours
         },
-        proxy: false
+        proxy: true
     };
 
 }
