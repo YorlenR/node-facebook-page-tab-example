@@ -1,8 +1,11 @@
 var controllers = require('./controllers');
+var facebookPageTap = require('facebook-page-tab');
 
-var Routes = function(app) {
+var Routes = function(app, config) {
 
   app.get('install', controllers.install.install);
+
+  app.use(facebookPageTap(app, config.facebook));
 
   app.post( '/', function( req, res ){
   	res.send( JSON.stringify( req.session, null, 2 ) );

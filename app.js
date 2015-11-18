@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var facebookPageTap = require('facebook-page-tab');
 var config = require('./config');
 var Routes = require('./routes');
 
@@ -23,12 +22,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
-}))
-
-app.use( facebookPageTap( app, config.facebook ) );
+}));
 
 // set routes
-routes = new Routes(app);
+routes = new Routes(app, config);
 
 // set listen
 app.listen(config.port);
