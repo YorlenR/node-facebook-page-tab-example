@@ -10,9 +10,20 @@ var routes = require('./routes');
 var app = express();
 
 // Express configuration
-app.use( bodyParser() );
-app.use( cookieParser( config.session.secret ) );
-app.use( session( config.session ) );
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
+// parse application/json
+app.use(bodyParser.json());
+app.use(cookieParser(config.session.secret));
+
+app.use(session({
+  secret: config.session,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 
 app.use( facebookPageTap( app, config.facebook ) );
 
