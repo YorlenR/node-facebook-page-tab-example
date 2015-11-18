@@ -3,7 +3,7 @@ var facebookPageTap = require('facebook-page-tab');
 
 var Routes = function(app, config) {
 
-  app.get('install', controllers.install.install);
+  app.get('/install', controllers.install.install);
 
   app.use(facebookPageTap(app, config.facebook));
 
