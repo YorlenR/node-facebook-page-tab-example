@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var facebookPageTap = require('facebook-page-tab');
 var config = require('./config');
-var routes = require('./routes');
+var Routes = require('./routes');
 
 // Set in app express module
 var app = express();
