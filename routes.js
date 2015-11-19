@@ -5,7 +5,9 @@ var Routes = function(app, config) {
 
   app.get('/install', controllers.install.install);
 
-  app.use(facebookPageTap(app, config.facebook));
+  app.use(facebookPageTap.page(app, config.facebook));
+
+  app.use(facebookPageTap.auth(app, config.facebook));
 
   app.post( '/', function( req, res ){
     console.log(req.body);
