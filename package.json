@@ -6,7 +6,7 @@
     "cookie-parser": "1.4.0",
     "express": "4.13.3",
     "express-session": "1.12.1",
-    "facebook-page-tab": "0.0.18"
+    "facebook-page-tab": "0.0.19"
   },
   "engines": {
     "node": "4.2.2"
