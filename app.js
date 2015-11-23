@@ -2,8 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var pg = require('pg');
+var pgSession = require('connect-pg-simple')(session);
 var config = require('./config');
 var Routes = require('./routes');
+
 
 // Set in app express module
 var app = express();
@@ -18,6 +21,11 @@ app.use(bodyParser.json());
 app.use(cookieParser(config.session.secret));
 
 app.use(session({
+	store: new pgSession({
+    pg : pg,                                  // Use global pg-module
+    conString : process.env.DATABASE_URL, // Connect using something else than default DATABASE_URL env variable
+    tableName : 'user_sessions'               // Use another table-name than the default "session" one
+  }),
   secret: config.session,
   resave: false,
   saveUninitialized: true,
