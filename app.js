@@ -29,7 +29,10 @@ app.use(session({
   secret: config.session,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: {
+		secure: true,
+		maxAge: 30 * 24 * 60 * 60 * 1000
+	}
 }));
 
 // set routes
