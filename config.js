@@ -16,7 +16,8 @@ var Config = function(){
         id: process.env.FACEBOOK_ID, // facebook application ID
         secret: process.env.FACEBOOK_SECRET, // facebook application secret
         callback: process.env.FACEBOOK_CALLBACK, // facebook callback url
-        scope: ['email'] // https://developers.facebook.com/docs/facebook-login/permissions/v2.0
+        scope: ['email'], // https://developers.facebook.com/docs/facebook-login/permissions/v2.0,
+        pageId: process.env.FACEBOOK_PAGE_ID
     };
 
     /**
