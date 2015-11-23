@@ -15,6 +15,6 @@ var Routes = function(app, config) {
   	res.send( JSON.stringify( req.session, null, 2 ) );
   } );
 
-}
+};
 
 module.exports = Routes;

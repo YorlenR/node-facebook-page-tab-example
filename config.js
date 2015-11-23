@@ -33,6 +33,6 @@ var Config = function(){
         proxy: true
     };
 
-}
+};
 
 module.exports = new Config();
